@@ -1,10 +1,7 @@
 {
-  "releaseTag": "model-files-v1",
+  "releaseTag": "model-files-v2",
   "githubRepository": "MashiroSaber03/Saber-Translator-Models",
-  "modelscope": {
-    "repository": "MashiroSaber/Saber-Translator-Models",
-    "revision": "e1c848a0b54c7a788a4637f2346e6e82e79e200e"
-  },
+  "modelscope": null,
   "models": [
     {
       "id": "detector_default",
@@ -17,7 +14,12 @@
           "size": 308380176,
           "sha256": "67ce1c4ed4793860f038c71189ba9630a7756f7683b1ee5afb69ca0687dc502e"
         }
-      ]
+      ],
+      "archive": {
+        "path": "models/detector_default/detector_default.zip",
+        "size": 308380330,
+        "sha256": "b68072f654cf9d7018348e5ecc818fea0d3795cc6cc6d8b5b49aa3ce4e78f9c3"
+      }
     },
     {
       "id": "detector_ctd",
@@ -35,7 +37,12 @@
           "size": 94669756,
           "sha256": "1a86ace74961413cbd650002e7bb4dcec4980ffa21b2f19b86933372071d718f"
         }
-      ]
+      ],
+      "archive": {
+        "path": "models/detector_ctd/detector_ctd.zip",
+        "size": 174618905,
+        "sha256": "7ac3f9f3466c283b791ffdc66d546419f6d54893b1a7bd2022d25f3f01e52d95"
+      }
     },
     {
       "id": "detector_yolo",
@@ -48,7 +55,12 @@
           "size": 16534011,
           "sha256": "bde7c9d55641a9e319903b6f64c82d5912ccd96977a5a6a28b52c1b639d39096"
         }
-      ]
+      ],
+      "archive": {
+        "path": "models/detector_yolo/detector_yolo.zip",
+        "size": 16534159,
+        "sha256": "50073ba43a03f27e3fc029bde65075cfd592b95a921cf614abc9c67a20a79e38"
+      }
     },
     {
       "id": "saber_yolo",
@@ -61,7 +73,12 @@
           "size": 56455253,
           "sha256": "a34bcb05eb3ca75941cfdaa59883edf19f6b209bcc9cc1fb139a2f5cf0bc6324"
         }
-      ]
+      ],
+      "archive": {
+        "path": "models/saber_yolo/saber_yolo.zip",
+        "size": 56455399,
+        "sha256": "8859b54d1cbb0764388e9f8a41eebf93f0e69c722631807132630d65e53453d1"
+      }
     },
     {
       "id": "manga_ocr",
@@ -94,7 +111,12 @@
           "size": 24072,
           "sha256": "344fbb6b8bf18c57839e924e2c9365434697e0227fac00b88bb4899b78aa594d"
         }
-      ]
+      ],
+      "archive": {
+        "path": "models/manga_ocr/manga_ocr.zip",
+        "size": 444238473,
+        "sha256": "b768f0475e084ef4a203a4905f4d7479d98518524c5679badcd8820b5d616ece"
+      }
     },
     {
       "id": "paddle_ocr",
@@ -117,7 +139,12 @@
           "size": 74947,
           "sha256": "b5f2bfe2bdd9448429e3e82b51c789775d9b42f2403d082b00662eb77e401c5d"
         }
-      ]
+      ],
+      "archive": {
+        "path": "models/paddle_ocr/paddle_ocr.zip",
+        "size": 138663191,
+        "sha256": "744e98ede41a5a2bdbcf4c80d8cb9f649beeea0bf13f938278befd9a86122150"
+      }
     },
     {
       "id": "ocr_48px",
@@ -135,7 +162,12 @@
           "size": 186651,
           "sha256": "f5722368146aa0fbcc9f4726866e4efc3203318ebb66c811d8cbbe915576538a"
         }
-      ]
+      ],
+      "archive": {
+        "path": "models/ocr_48px/ocr_48px.zip",
+        "size": 204477123,
+        "sha256": "2f5f3f9dc13298aa89363861e6208288be15972252e9ee5e958c2fb628863f5d"
+      }
     },
     {
       "id": "paddleocr_vl",
@@ -198,7 +230,12 @@
           "size": 1474,
           "sha256": "2f27812dab7f333e471884e0c803d807f11953d5453140dfb1aaba234f872bc8"
         }
-      ]
+      ],
+      "archive": {
+        "path": "models/paddleocr_vl/paddleocr_vl.zip",
+        "size": 1930278193,
+        "sha256": "d49401a4ef9b11e3e00fe64d28d12e7de7707c98530651b1ca9eaa0f5bac9430"
+      }
     },
     {
       "id": "lama_mpe",
@@ -211,7 +248,12 @@
           "size": 108580583,
           "sha256": "d625aa1b3e0d0408acfd6928aa84f005867aa8dbb9162480346a4e20660786cc"
         }
-      ]
+      ],
+      "archive": {
+        "path": "models/lama_mpe/lama_mpe.zip",
+        "size": 108580739,
+        "sha256": "493117f9635ed5c44eca570f89bb417628147af20d17e2d24d80d214e6bc1b98"
+      }
     },
     {
       "id": "litelama",
@@ -224,7 +266,12 @@
           "size": 496800380,
           "sha256": "f8fcaae73ca8a96e463bf29c7583ea84a3c99075cb58ff90ceed6816243a1f09"
         }
-      ]
+      ],
+      "archive": {
+        "path": "models/litelama/litelama.zip",
+        "size": 496800528,
+        "sha256": "8fa06a2b806d447cc898aa2168dc3a071fcdedffcd110497660487a710017893"
+      }
     },
     {
       "id": "lama_manga",
@@ -237,7 +284,12 @@
           "size": 204332996,
           "sha256": "a790515e9da839b8d89af7d565ceb110d908b7d6fbdb991f2acb2ec7d9b08bdb"
         }
-      ]
+      ],
+      "archive": {
+        "path": "models/lama_manga/lama_manga.zip",
+        "size": 204333160,
+        "sha256": "b43c46265d287c2c5f51c21522ab32d4d20b415d29b291869deac3a5c09e73bb"
+      }
     }
   ]
 }
