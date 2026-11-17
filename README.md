@@ -6,7 +6,7 @@
 
 ## model-files-v1
 
-11 组模型、29 个文件，总计 4,083,355,990 字节（约 3.80 GiB）。文件名以 SHA-256 开头；应用下载后会校验文件大小及哈希。完整路径及校验值见 model_manifest.json。模型权重位于 Releases 附件中，不存入 Git 历史。
+11 组模型、29 个文件，总计 4,083,355,990 字节（约 3.80 GiB）。文件名以 SHA-256 开头；应用下载后会校验文件大小及哈希。完整路径及校验值见 model_manifest.json。GitHub 通过 [Release 附件](https://github.com/MashiroSaber03/Saber-Translator-Models/releases/tag/model-files-v1) 分发权重；[魔搭镜像](https://modelscope.cn/models/MashiroSaber/Saber-Translator-Models/files) 提供相同文件。应用自动优先使用魔搭，失败时回退 GitHub。
 
 | 模型 | 文件数 | 体积 |
 | --- | ---: | ---: |
