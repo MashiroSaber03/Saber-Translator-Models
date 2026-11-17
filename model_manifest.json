@@ -1,7 +1,10 @@
 {
   "releaseTag": "model-files-v1",
   "githubRepository": "MashiroSaber03/Saber-Translator-Models",
-  "modelscope": null,
+  "modelscope": {
+    "repository": "MashiroSaber/Saber-Translator-Models",
+    "revision": "e1c848a0b54c7a788a4637f2346e6e82e79e200e"
+  },
   "models": [
     {
       "id": "detector_default",
