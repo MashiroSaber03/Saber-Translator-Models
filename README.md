@@ -6,7 +6,7 @@
 
 每个模型独立一个文件夹、一个 ZIP。包内保留原模型目录及其权重、词典和配置，共 11 个模型包、29 个运行文件，合计 4,083,360,200 字节（约 3.80 GiB）。
 
-GitHub 的模型目录提供说明及对应 ZIP 的下载链接，二进制 ZIP 位于 [模型包 Release](https://github.com/MashiroSaber03/Saber-Translator-Models/releases/tag/model-files-v2)。[魔搭镜像](https://modelscope.cn/models/MashiroSaber/Saber-Translator-Models/files) 正在同步此目录结构。完整安装路径、ZIP 和包内各文件的校验值见 [model_manifest.json](model_manifest.json)。
+GitHub 的模型目录提供说明及对应 ZIP 的下载链接，二进制 ZIP 位于 [模型包 Release](https://github.com/MashiroSaber03/Saber-Translator-Models/releases/tag/model-files-v2)。[魔搭镜像](https://modelscope.cn/models/MashiroSaber/Saber-Translator-Models/files) 提供相同的 ZIP，每个模型在仓库根目录有一个独立文件夹。完整安装路径、ZIP 和包内各文件的校验值见 [model_manifest.json](model_manifest.json)。
 
 | 模型目录 | ZIP 下载 | 包内文件数 | 下载大小 |
 | --- | --- | ---: | ---: |
