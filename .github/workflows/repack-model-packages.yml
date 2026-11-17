@@ -1,0 +1,71 @@
+name: Repack published models into per-model ZIPs
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/repack-model-packages.yml']
+permissions:
+  contents: write
+concurrency: model-files-v2-publication
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Verify and repack the existing published weights
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, subprocess, tempfile, zipfile
+          from pathlib import Path
+          from urllib.request import urlopen
+
+          repo, commit = os.environ['GITHUB_REPOSITORY'], os.environ['GITHUB_SHA']
+          manifest = json.load(urlopen(f'https://raw.githubusercontent.com/{repo}/{commit}/model_manifest.json', timeout=60))
+          tag = manifest['releaseTag']
+          assert tag == 'model-files-v2'
+          def gh(*args):
+              return subprocess.check_output(['gh', *args], text=True)
+          def release():
+              return json.loads(gh('api', f'repos/{repo}/releases/tags/{tag}'))
+          if subprocess.run(['gh', 'release', 'view', tag, '--repo', repo], stdout=subprocess.DEVNULL).returncode:
+              subprocess.run(['gh', 'release', 'create', tag, '--repo', repo, '--target', 'main', '--draft',
+                  '--title', 'Saber-Translator 模型包 · 每个模型一个 ZIP',
+                  '--notes', '11 个独立模型包。每个 ZIP 保留原模型目录、权重及配套配置；可在应用设置 → 模型管理中自动下载安装，或离线解压到 models/。旧版 model-files-v1 保留供旧客户端使用。'], check=True)
+          for model in manifest['models']:
+              record = model['archive']
+              name = Path(record['path']).name
+              assets = {asset['name']: asset for asset in release()['assets']}
+              if name in assets:
+                  assert assets[name]['size'] == record['size'] and assets[name]['digest'] == 'sha256:' + record['sha256']
+                  continue
+              with tempfile.TemporaryDirectory(prefix='model-package-') as temp:
+                  root = Path(temp)
+                  for file in model['files']:
+                      path = root / file['path']
+                      path.parent.mkdir(parents=True, exist_ok=True)
+                      source = f"https://github.com/{repo}/releases/download/model-files-v1/{file['sha256']}-{path.name}"
+                      subprocess.run(['curl', '--fail', '--location', '--retry', '3', '--silent', '--show-error', '--output', str(path), source], check=True)
+                      with path.open('rb') as data:
+                          assert path.stat().st_size == file['size'] and hashlib.file_digest(data, 'sha256').hexdigest() == file['sha256']
+                  archive = root / name
+                  with zipfile.ZipFile(archive, 'w', compression=zipfile.ZIP_STORED) as package:
+                      for file in model['files']:
+                          info = zipfile.ZipInfo(file['path'], date_time=(1980, 1, 1, 0, 0, 0))
+                          info.create_system = 3
+                          info.external_attr = 0o100644 << 16
+                          info.file_size = file['size']
+                          with (root / file['path']).open('rb') as source, package.open(info, 'w') as output:
+                              while chunk := source.read(256 * 1024):
+                                  output.write(chunk)
+                  with archive.open('rb') as data:
+                      assert archive.stat().st_size == record['size'] and hashlib.file_digest(data, 'sha256').hexdigest() == record['sha256'], name
+                  subprocess.run(['gh', 'release', 'upload', tag, str(archive), '--repo', repo], check=True)
+              asset = next(asset for asset in release()['assets'] if asset['name'] == name)
+              assert asset['size'] == record['size'] and asset['digest'] == 'sha256:' + record['sha256']
+              print(f'Published and verified {name}', flush=True)
+          assert len(release()['assets']) == len(manifest['models'])
+          subprocess.run(['gh', 'release', 'edit', tag, '--repo', repo, '--draft=false', '--latest'], check=True)
+          PY
+
