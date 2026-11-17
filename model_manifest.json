@@ -1,7 +1,10 @@
 {
   "releaseTag": "model-files-v2",
   "githubRepository": "MashiroSaber03/Saber-Translator-Models",
-  "modelscope": null,
+  "modelscope": {
+    "repository": "MashiroSaber/Saber-Translator-Models",
+    "revision": "44efeecb4413fb4fd1435ca9f065b9e9bcfa8841"
+  },
   "models": [
     {
       "id": "detector_default",
@@ -16,7 +19,7 @@
         }
       ],
       "archive": {
-        "path": "models/detector_default/detector_default.zip",
+        "path": "detector_default/detector_default.zip",
         "size": 308380330,
         "sha256": "b68072f654cf9d7018348e5ecc818fea0d3795cc6cc6d8b5b49aa3ce4e78f9c3"
       }
@@ -39,7 +42,7 @@
         }
       ],
       "archive": {
-        "path": "models/detector_ctd/detector_ctd.zip",
+        "path": "detector_ctd/detector_ctd.zip",
         "size": 174618905,
         "sha256": "7ac3f9f3466c283b791ffdc66d546419f6d54893b1a7bd2022d25f3f01e52d95"
       }
@@ -57,7 +60,7 @@
         }
       ],
       "archive": {
-        "path": "models/detector_yolo/detector_yolo.zip",
+        "path": "detector_yolo/detector_yolo.zip",
         "size": 16534159,
         "sha256": "50073ba43a03f27e3fc029bde65075cfd592b95a921cf614abc9c67a20a79e38"
       }
@@ -75,7 +78,7 @@
         }
       ],
       "archive": {
-        "path": "models/saber_yolo/saber_yolo.zip",
+        "path": "saber_yolo/saber_yolo.zip",
         "size": 56455399,
         "sha256": "8859b54d1cbb0764388e9f8a41eebf93f0e69c722631807132630d65e53453d1"
       }
@@ -113,7 +116,7 @@
         }
       ],
       "archive": {
-        "path": "models/manga_ocr/manga_ocr.zip",
+        "path": "manga_ocr/manga_ocr.zip",
         "size": 444238473,
         "sha256": "b768f0475e084ef4a203a4905f4d7479d98518524c5679badcd8820b5d616ece"
       }
@@ -141,7 +144,7 @@
         }
       ],
       "archive": {
-        "path": "models/paddle_ocr/paddle_ocr.zip",
+        "path": "paddle_ocr/paddle_ocr.zip",
         "size": 138663191,
         "sha256": "744e98ede41a5a2bdbcf4c80d8cb9f649beeea0bf13f938278befd9a86122150"
       }
@@ -164,7 +167,7 @@
         }
       ],
       "archive": {
-        "path": "models/ocr_48px/ocr_48px.zip",
+        "path": "ocr_48px/ocr_48px.zip",
         "size": 204477123,
         "sha256": "2f5f3f9dc13298aa89363861e6208288be15972252e9ee5e958c2fb628863f5d"
       }
@@ -232,7 +235,7 @@
         }
       ],
       "archive": {
-        "path": "models/paddleocr_vl/paddleocr_vl.zip",
+        "path": "paddleocr_vl/paddleocr_vl.zip",
         "size": 1930278193,
         "sha256": "d49401a4ef9b11e3e00fe64d28d12e7de7707c98530651b1ca9eaa0f5bac9430"
       }
@@ -250,7 +253,7 @@
         }
       ],
       "archive": {
-        "path": "models/lama_mpe/lama_mpe.zip",
+        "path": "lama_mpe/lama_mpe.zip",
         "size": 108580739,
         "sha256": "493117f9635ed5c44eca570f89bb417628147af20d17e2d24d80d214e6bc1b98"
       }
@@ -268,7 +271,7 @@
         }
       ],
       "archive": {
-        "path": "models/litelama/litelama.zip",
+        "path": "litelama/litelama.zip",
         "size": 496800528,
         "sha256": "8fa06a2b806d447cc898aa2168dc3a071fcdedffcd110497660487a710017893"
       }
@@ -286,7 +289,7 @@
         }
       ],
       "archive": {
-        "path": "models/lama_manga/lama_manga.zip",
+        "path": "lama_manga/lama_manga.zip",
         "size": 204333160,
         "sha256": "b43c46265d287c2c5f51c21522ab32d4d20b415d29b291869deac3a5c09e73bb"
       }
