@@ -4,7 +4,7 @@
 
 ## model-files-v2
 
-每个模型独立一个文件夹、一个 ZIP。包内保留原模型目录及其权重、词典和配置，共 11 个模型包、29 个运行文件，合计 4,083,360,200 字节（约 3.80 GiB）。
+每款翻译模型各有独立文件夹和一个 ZIP。包内保留原模型目录及其权重、词典和配置，共 11 个翻译模型包、29 个运行文件，合计 4,083,360,200 字节（约 3.80 GiB）。
 
 GitHub 的模型目录提供说明及对应 ZIP 的下载链接，二进制 ZIP 位于 [模型包 Release](https://github.com/MashiroSaber03/Saber-Translator-Models/releases/tag/model-files-v2)。[魔搭镜像](https://modelscope.cn/models/MashiroSaber/Saber-Translator-Models/files) 提供相同的 ZIP，每个模型在仓库根目录有一个独立文件夹。完整安装路径、ZIP 和包内各文件的校验值见 [model_manifest.json](model_manifest.json)。
 
@@ -22,11 +22,20 @@ GitHub 的模型目录提供说明及对应 ZIP 的下载链接，二进制 ZIP 
 | [LiteLaMA](models/litelama/) | [litelama.zip](https://github.com/MashiroSaber03/Saber-Translator-Models/releases/download/model-files-v2/litelama.zip) | 1 | 473.8 MiB |
 | [LaMA Manga](models/lama_manga/) | [lama_manga.zip](https://github.com/MashiroSaber03/Saber-Translator-Models/releases/download/model-files-v2/lama_manga.zip) | 1 | 194.9 MiB |
 
+## 字体匹配决策模型
+
+每款保留一个完整 ZIP。GitHub Release 按 2 GiB 的单附件上限提供分卷，各模型目录有拼接方法和校验值。
+
+- [Valen-0.8B](models/valen_08b/) · 3.20 GiB · GitHub 2 个分卷
+- [Valen-2B](models/valen_2b/) · 8.27 GiB · GitHub 5 个分卷
+
+将包内的 Valen 模型目录解压到 Saber 的模型下载目录。首次使用时在模型管理中准备 Valen 独立推理环境。
+
 ## 安装方式
 
-应用内下载会自动续传、校验并解压安装。离线安装时，将 ZIP 内的模型目录解压到应用的 `models/`；例如 `manga_ocr/config.json` 应位于 `models/manga_ocr/config.json`。LaMA MPE 与 LiteLaMA 各有一个 ZIP，解压后共享 `models/lama/`，使用不同的权重文件。
+翻译模型的应用内下载支持续传、校验和自动解压。离线安装时，将 ZIP 内的模型目录解压到应用的 `models/`；例如 `manga_ocr/config.json` 应位于 `models/manga_ocr/config.json`。LaMA MPE 与 LiteLaMA 各有一个 ZIP，解压后共享 `models/lama/`，使用不同的权重文件。
 
-模型包包含各模型独立运行所需的权重、词典及配置。Python、PyTorch、Transformers、ONNX Runtime 等环境由主程序和其依赖提供。程序安装成功后即可加载模型，无需再为每个 ZIP 安装独立环境。
+翻译模型包包含权重、词典及配置，Python、PyTorch、Transformers、ONNX Runtime 等依赖由主程序环境提供。
 
 旧版 [model-files-v1](https://github.com/MashiroSaber03/Saber-Translator-Models/releases/tag/model-files-v1) 保留供旧客户端使用，已安装模型无需迁移。
 
